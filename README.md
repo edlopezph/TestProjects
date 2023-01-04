@@ -1,6 +1,6 @@
 Toy Robot Coding Challenge
 
-This is a console application developed on Visual Studio 2002 C# NetCore 6.0 Framework
+This is a console application developed on Visual Studio 2022 C# NetCore 6.0 Framework
 
 Executing the program:
 
