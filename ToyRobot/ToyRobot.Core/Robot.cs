@@ -108,7 +108,7 @@ namespace ToyRobot.Core
 
         public string Command(string input)
         {
-            string command = input.ToUpper();
+            string command = input.ToUpper().Trim();
             string result = string.Empty;
 
             try
@@ -119,16 +119,16 @@ namespace ToyRobot.Core
                 else if (!isPlaced)
                     result = RobotData.NOT_PLACED_YET_MESSAGE;
 
-                else if (command.Contains("REPORT"))
+                else if (command == "REPORT")
                     result = Report();
 
-                else if (command.Contains("MOVE"))
+                else if (command == "MOVE")
                     result = Move();
 
-                else if (command.Contains("LEFT"))
+                else if (command =="LEFT")
                     Left();
 
-                else if (command.Contains("RIGHT"))
+                else if (command == "RIGHT")
                     Right();
 
                 else
