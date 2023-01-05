@@ -2,6 +2,7 @@
 {
     public class RobotData
     {
+        public const string COMMAND_SUCCESS_MESSAGE = "Command successful";
         public const string OUT_OF_BOUNDS_MESSAGE = "Command ignored - Out of bounds";
         public const string NOT_PLACED_YET_MESSAGE = "Command ignored - Robot not placed yet";
         public const string COMMAND_NOT_RECOGNISED_MESSAGE = "Command ignored - Robot did not understand this command";

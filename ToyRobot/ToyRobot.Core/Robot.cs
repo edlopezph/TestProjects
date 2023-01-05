@@ -50,7 +50,7 @@ namespace ToyRobot.Core
 
         public string Place(string command)
         {
-            string result = string.Empty;
+            string result = RobotData.COMMAND_SUCCESS_MESSAGE;
             char[] delimiterChars = { ',', ' ' };
             string[] wordsInCommand = command.Split(delimiterChars);
 
@@ -74,7 +74,7 @@ namespace ToyRobot.Core
 
         public string Move()
         {
-            string result = string.Empty;
+            string result = RobotData.COMMAND_SUCCESS_MESSAGE;
             int originalX = this.xPosition;
             int originalY = this.yPosition;
 
@@ -90,20 +90,24 @@ namespace ToyRobot.Core
             return result;
         }
 
-        public void Left()
+        public string Left()
         {
             if (direction == (int)RobotData.Directions.NORTH)
                 direction = (int)RobotData.Directions.WEST;
             else
                 direction--;
+
+            return RobotData.COMMAND_SUCCESS_MESSAGE;
         }
 
-        public void Right()
+        public string Right()
         {          
             if(direction == (int)RobotData.Directions.WEST)
                 direction = (int)RobotData.Directions.NORTH;
             else
                 direction++;
+
+            return RobotData.COMMAND_SUCCESS_MESSAGE;
         }
 
         public string Command(string input)
@@ -126,10 +130,10 @@ namespace ToyRobot.Core
                     result = Move();
 
                 else if (command =="LEFT")
-                    Left();
+                    result = Left();
 
                 else if (command == "RIGHT")
-                    Right();
+                    result = Right();
 
                 else
                     result = RobotData.COMMAND_NOT_RECOGNISED_MESSAGE;
